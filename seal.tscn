@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://0qw40kpddpnw"]
+
+[ext_resource type="Script" uid="uid://cta2o4h1cm4p1" path="res://seal.gd" id="1_2pijg"]
+
+[node name="root" type="Node2D" unique_id=190766718]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1285122325]
+zoom = Vector2(4.95, 4.95)
+
+[node name="Seal" type="Node2D" parent="." unique_id=280682636]
+script = ExtResource("1_2pijg")
+
+[node name="Head" type="Sprite2D" parent="Seal" unique_id=2069493565]
+position = Vector2(13, -2.3841858e-07)
+scale = Vector2(76, 60)
+
+[node name="Polygon2D" type="Polygon2D" parent="Seal/Head" unique_id=1646844441]
+position = Vector2(-0.17105263, -0.0041666627)
+scale = Vector2(0.013157895, 0.025000002)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(40, 0.83333325, -1, 12.166666, -20, 0, 0, -10.499999)
+
+[node name="Neck" type="Sprite2D" parent="Seal" unique_id=604680213]
+position = Vector2(-26, 2)
+scale = Vector2(48, 37.894737)
+
+[node name="Polygon2D" type="Polygon2D" parent="Seal/Neck" unique_id=578581326]
+position = Vector2(-0.20833337, -0.006597195)
+scale = Vector2(0.020833334, 0.039583333)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(29, -1.1666666, 0, 8.833333, -8, -0.49999997, 0, -11.833333)
+
+[node name="Body" type="Sprite2D" parent="Seal" unique_id=699568171]
+position = Vector2(-73, 1)
+scale = Vector2(48, 37.894737)
+
+[node name="Polygon2D" type="Polygon2D" parent="Seal/Body" unique_id=1472151916]
+position = Vector2(-0.5833334, -2.9802322e-08)
+scale = Vector2(0.020833334, 0.039583333)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(70, -9.536743e-07, 36, 15.333332, 0, 8.833333, -8, -0.49999997, 0, -11.833333, 39, -17.333336)
+
+[node name="Tail1" type="Sprite2D" parent="Seal" unique_id=490212865]
+position = Vector2(-73, 1)
+scale = Vector2(48, 37.894737)
+
+[node name="Polygon2D" type="Polygon2D" parent="Seal/Tail1" unique_id=1651831807]
+position = Vector2(-1.4583334, -0.026388887)
+scale = Vector2(0.020833334, 0.039583333)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(41, 1.3333335, 40, 9.333334, 6, 6, 7, -4.666667, 39, -7.3333335)
+
+[node name="Tail2" type="Sprite2D" parent="Seal" unique_id=1672792208]
+position = Vector2(-102, 1)
+scale = Vector2(48, 37.894737)
+
+[node name="Polygon2D" type="Polygon2D" parent="Seal/Tail2" unique_id=1618282600]
+position = Vector2(-1.4583334, -0.026388887)
+scale = Vector2(0.020833334, 0.039583333)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(41, 1.3333335, 42, 6.666667, 7, 2.6666667, 7, -2, 22.868286, -2.6222878, 41, -3.3333335)
+
+[node name="Tail3" type="Sprite2D" parent="Seal" unique_id=696299643]
+position = Vector2(-102, 1)
+scale = Vector2(48, 37.894737)
+
+[node name="Polygon2D" type="Polygon2D" parent="Seal/Tail3" unique_id=1665039165]
+position = Vector2(-1.4375, -0.05277778)
+scale = Vector2(0.020833334, 0.039583333)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(-16, -5.9604645e-08, 9, -1.3333334, 10, 2.6666665)

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://b6xxqfi41djs6"]
+
+[node name="Node2D" type="Node2D" unique_id=964479779]
+
+[node name="Sky" type="Parallax2D" parent="." unique_id=449204144]
+scale = Vector2(31.324541, 20.445658)
+
+[node name="ColorRect" type="ColorRect" parent="Sky" unique_id=1036268920]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.42978057, 0.592464, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky" unique_id=1732641095]
+
+[node name="Clouds" type="Parallax2D" parent="." unique_id=1264558658]
+scale = Vector2(31.324541, 20.445658)
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(1, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Clouds" unique_id=851548297]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.23388462, 0.247887)
+color = Color(0.9946086, 0.9954154, 0.9993655, 1)
+
+[node name="Clouds2" type="Parallax2D" parent="." unique_id=695193100]
+scale = Vector2(31.324541, 20.445658)
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(1, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="Clouds2" unique_id=1943386003]
+offset_top = -0.04891014
+offset_right = 40.0
+offset_bottom = 39.951088
+scale = Vector2(0.23388462, 0.247887)
+color = Color(0.54400665, 0.46608484, 0.9999704, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1297997142]
+position = Vector2(585, 330)
+constant_linear_velocity = Vector2(50, 0)
+
+[node name="Camera2D" type="Camera2D" parent="StaticBody2D" unique_id=630001829]

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c3ruk0npwgem7"]
+
+[ext_resource type="Texture2D" uid="uid://gpp5ql5dsl2w" path="res://ART/Background1.png" id="1_3tcve"]
+[ext_resource type="Texture2D" uid="uid://cyb64pxu3xypi" path="res://ART/Background2.png" id="2_ausxy"]
+[ext_resource type="Texture2D" uid="uid://8powck3j5g7y" path="res://ART/Background3.png" id="3_lhy23"]
+[ext_resource type="Texture2D" uid="uid://cmu2xkmk6x2p2" path="res://ART/Background4.png" id="4_xptjj"]
+[ext_resource type="Script" uid="uid://bqevp25k7okxb" path="res://camera_2d.gd" id="5_4aapf"]
+
+[node name="ParallaxTutorial" type="Node2D" unique_id=1951839357]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1711973082]
+position = Vector2(571, 311)
+script = ExtResource("5_4aapf")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=5559075]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="Camera2D" unique_id=1737549431]
+position = Vector2(-288, -171)
+scale = Vector2(3.6335995, 3.6335995)
+
+[node name="Parallax2D" type="Parallax2D" parent="Camera2D/Node2D" unique_id=1660076342]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Node2D/Parallax2D" unique_id=1882779703]
+texture_filter = 1
+texture = ExtResource("1_3tcve")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Camera2D/Node2D" unique_id=1184613443]
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Node2D/Parallax2D2" unique_id=1601523526]
+texture_filter = 1
+texture = ExtResource("2_ausxy")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Camera2D/Node2D" unique_id=834571759]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Node2D/Parallax2D3" unique_id=451973842]
+texture_filter = 1
+texture = ExtResource("3_lhy23")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Camera2D/Node2D" unique_id=248548385]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/Node2D/Parallax2D4" unique_id=1187466604]
+texture_filter = 1
+texture = ExtResource("4_xptjj")
