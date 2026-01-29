@@ -5,7 +5,6 @@
 [node name="root" type="Node2D" unique_id=190766718]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1285122325]
-zoom = Vector2(4.95, 4.95)
 
 [node name="Seal" type="Node2D" parent="." unique_id=280682636]
 script = ExtResource("1_2pijg")
@@ -41,31 +40,28 @@ color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(70, -9.536743e-07, 36, 15.333332, 0, 8.833333, -8, -0.49999997, 0, -11.833333, 39, -17.333336)
 
 [node name="Tail1" type="Sprite2D" parent="Seal" unique_id=490212865]
-position = Vector2(-73, 1)
+position = Vector2(-139, -3.9999995)
 scale = Vector2(48, 37.894737)
 
 [node name="Polygon2D" type="Polygon2D" parent="Seal/Tail1" unique_id=1651831807]
-position = Vector2(-1.4583334, -0.026388887)
 scale = Vector2(0.020833334, 0.039583333)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(41, 1.3333335, 40, 9.333334, 6, 6, 7, -4.666667, 39, -7.3333335)
 
 [node name="Tail2" type="Sprite2D" parent="Seal" unique_id=1672792208]
-position = Vector2(-102, 1)
+position = Vector2(-168, -3)
 scale = Vector2(48, 37.894737)
 
 [node name="Polygon2D" type="Polygon2D" parent="Seal/Tail2" unique_id=1618282600]
-position = Vector2(-1.4583334, -0.026388887)
 scale = Vector2(0.020833334, 0.039583333)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(41, 1.3333335, 42, 6.666667, 7, 2.6666667, 7, -2, 22.868286, -2.6222878, 41, -3.3333335)
 
 [node name="Tail3" type="Sprite2D" parent="Seal" unique_id=696299643]
-position = Vector2(-102, 1)
+position = Vector2(-169, -3.0000002)
 scale = Vector2(48, 37.894737)
 
 [node name="Polygon2D" type="Polygon2D" parent="Seal/Tail3" unique_id=1665039165]
-position = Vector2(-1.4375, -0.05277778)
 scale = Vector2(0.020833334, 0.039583333)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(-16, -5.9604645e-08, 9, -1.3333334, 10, 2.6666665)
