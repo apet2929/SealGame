@@ -60,9 +60,9 @@ func do_rotation(mot: Vector2):
 
 func update_arms():
 	#var foo = Vector2(1,2)
-	#foo.rotated()
-	$LeftArm.position = $Body.position + arm_offsets[0].rotated($Body.rotation)
-	$RightArm.position = $Body.position + arm_offsets[1].rotated($Body.rotation)
+	#foo.rotated()sd
+	$LeftArm.position = $Body.position - arm_offsets[0].rotated($Body.rotation)
+	$RightArm.position = $Body.position - arm_offsets[1].rotated($Body.rotation)
 
 	$LeftArm.rotation = lerp_angle($LeftArm.rotation, $Head.rotation, 0.2)
 	$RightArm.rotation = lerp_angle($RightArm.rotation, $Head.rotation, 0.2)

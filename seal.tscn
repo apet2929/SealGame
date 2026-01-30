@@ -1,86 +1,154 @@
 [gd_scene format=3 uid="uid://cisfkdly1y538"]
 
 [ext_resource type="Script" uid="uid://cta2o4h1cm4p1" path="res://seal.gd" id="1_2pijg"]
+[ext_resource type="Texture2D" uid="uid://bqw1bhk4xa38t" path="res://seal-head.png" id="2_d4dhe"]
+[ext_resource type="Texture2D" uid="uid://dcspur824qy6s" path="res://seal-flipper-real.png" id="3_l7uaq"]
+[ext_resource type="Texture2D" uid="uid://ctok7gbkqosp8" path="res://sea-neckl.png" id="4_ysd6k"]
+[ext_resource type="Texture2D" uid="uid://byp6x6n2yy068" path="res://seal-body.png" id="5_ng0mj"]
+[ext_resource type="Texture2D" uid="uid://bi1j6lin6jkhj" path="res://seal-flipper.png" id="6_7hcuo"]
 
 [node name="Seal" type="Node2D" unique_id=2039113663]
 script = ExtResource("1_2pijg")
 
-[node name="Head" type="Sprite2D" parent="." unique_id=885158333]
-position = Vector2(13, -2.3841858e-07)
-scale = Vector2(76, 60)
+[node name="Head" type="Node2D" parent="." unique_id=557883764]
+position = Vector2(5, 1)
 
 [node name="Polygon2D" type="Polygon2D" parent="Head" unique_id=1087014256]
-position = Vector2(-0.17105263, -0.0041666627)
-scale = Vector2(0.013157895, 0.025000002)
+visible = false
+position = Vector2(1, -1)
+scale = Vector2(1, 1.9000002)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(40, 0.83333325, -1, 12.166666, -20, 0, 0, -10.499999)
 
-[node name="LeftArm" type="Sprite2D" parent="." unique_id=1953518978]
-position = Vector2(-66, -29.999998)
-scale = Vector2(76, 60)
+[node name="Sprite2D" type="Sprite2D" parent="Head" unique_id=688815131]
+position = Vector2(6.9999995, -2.6077032e-08)
+rotation = 1.6034439
+scale = Vector2(0.67750925, 0.7233923)
+texture = ExtResource("2_d4dhe")
+flip_h = true
 
-[node name="Polygon2D" type="Polygon2D" parent="LeftArm" unique_id=610554984]
-position = Vector2(0.17105263, 0.26666665)
-rotation = -0.37210554
-scale = Vector2(0.013157895, 0.025000002)
+[node name="LeftArm" type="Node2D" parent="." unique_id=585276307]
+visible = false
+position = Vector2(-66, -29.999998)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftArm" unique_id=572006610]
+z_index = 1
+position = Vector2(-7.9999995, 8.999997)
+rotation = 2.006817
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("3_l7uaq")
+
+[node name="LArmPoly" type="Polygon2D" parent="LeftArm" unique_id=610554984]
+visible = false
+position = Vector2(13, 15.999999)
+rotation = -0.29889113
+scale = Vector2(0.9747823, 1.5587744)
+skew = -0.16023767
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 offset = Vector2(-2.4626732, -5.9233074)
 polygon = PackedVector2Array(8, 7.167, 1.2891846, -2.2780857, -2, -4, -7.532013, -5.66757, -27, -6.167, -3, 7.167)
 
-[node name="RightArm" type="Sprite2D" parent="." unique_id=598819822]
-position = Vector2(-67, 29)
-scale = Vector2(76, 60)
+[node name="RightArm" type="Node2D" parent="." unique_id=129214790]
+position = Vector2(-67, 17)
 
-[node name="Polygon2D" type="Polygon2D" parent="RightArm" unique_id=1335781729]
-position = Vector2(0.21052632, -0.26666665)
-scale = Vector2(0.013157895, 0.025000002)
+[node name="Sprite2D" type="Sprite2D" parent="RightArm" unique_id=211789336]
+z_index = 1
+position = Vector2(-1, 1)
+rotation = 1.1940387
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("3_l7uaq")
+flip_h = true
+
+[node name="RArmPoly" type="Polygon2D" parent="RightArm" unique_id=1335781729]
+visible = false
+position = Vector2(16, -15.999999)
+scale = Vector2(1, 1.5000001)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 offset = Vector2(-3, 5.333331)
 polygon = PackedVector2Array(8, -7.166665, 1.8210144, 1.5296669, -2, 5.333336, -7.2016296, 5.659012, -27, 6.166668, -3, -7.166665)
 
-[node name="Neck" type="Sprite2D" parent="." unique_id=1824266315]
+[node name="Neck" type="Node2D" parent="." unique_id=603150]
 position = Vector2(-26, 2)
-scale = Vector2(48, 37.894737)
 
-[node name="Polygon2D" type="Polygon2D" parent="Neck" unique_id=1170207322]
-position = Vector2(-0.20833337, -0.006597195)
-scale = Vector2(0.020833334, 0.039583333)
+[node name="NeckPoly" type="Polygon2D" parent="Neck" unique_id=1170207322]
+visible = false
+position = Vector2(-10, -0.24999893)
+scale = Vector2(1, 1.5)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(29, -1.1666666, 0, 8.833333, -8, -0.49999997, 0, -11.833333)
 
-[node name="Body" type="Sprite2D" parent="." unique_id=621881190]
-position = Vector2(-73, 1)
-scale = Vector2(48, 37.894737)
+[node name="Sprite2D" type="Sprite2D" parent="Neck" unique_id=1509331716]
+position = Vector2(7, -3)
+rotation = 1.5707964
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("4_ysd6k")
 
-[node name="Polygon2D" type="Polygon2D" parent="Body" unique_id=745239672]
-position = Vector2(-0.5833334, -2.9802322e-08)
-scale = Vector2(0.020833334, 0.039583333)
+[node name="Tail2" type="Node2D" parent="." unique_id=484847553]
+position = Vector2(-144, -3)
+
+[node name="T2Poly" type="Polygon2D" parent="Tail2" unique_id=282646811]
+visible = false
+position = Vector2(2, 1)
+scale = Vector2(1, 1.5)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+offset = Vector2(-27, -0.66666687)
+polygon = PackedVector2Array(41, 1.3333335, 42, 6.666667, 7, 2.6666667, 7, -2, 22.868286, -2.6222878, 41, -3.3333335)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail2" unique_id=2087069449]
+position = Vector2(5, 0)
+scale = Vector2(0.8138632, 0.77078426)
+texture = ExtResource("6_7hcuo")
+region_enabled = true
+region_rect = Rect2(54.904613, 0, 47.284855, 34)
+
+[node name="Tail1" type="Node2D" parent="." unique_id=1854066214]
+position = Vector2(-118, -4)
+
+[node name="T1Poly" type="Polygon2D" parent="Tail1" unique_id=990024022]
+visible = false
+position = Vector2(8, 2.0000002)
+scale = Vector2(1, 1.5)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+offset = Vector2(-29, -1.3333331)
+polygon = PackedVector2Array(41, 1.3333335, 40, 9.333334, 6, 6, 7, -4.666667, 39, -7.3333335)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail1" unique_id=307816219]
+position = Vector2(7, 2)
+scale = Vector2(1, 0.32354033)
+texture = ExtResource("5_ng0mj")
+region_enabled = true
+region_rect = Rect2(103, 45, 39, 77)
+
+[node name="Tail3" type="Node2D" parent="." unique_id=1842982244]
+position = Vector2(-169, -3.0000002)
+
+[node name="T3Poly" type="Polygon2D" parent="Tail3" unique_id=198267431]
+visible = false
+scale = Vector2(1, 1.5)
+color = Color(0.51279026, 0.5838927, 0.6798896, 1)
+polygon = PackedVector2Array(-15, 0.66666687, -13, 2.3841858e-07, -15, -1.9999998, -3, -0.6666665, 10, -1.9999998, 10, 2.6666665, -3, 2.666667, -16, 3.3333335, -13, 2.0000002)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail3" unique_id=1790378086]
+scale = Vector2(0.60277814, 0.7389377)
+texture = ExtResource("6_7hcuo")
+region_enabled = true
+region_rect = Rect2(0, 0, 54.56123, 34)
+
+[node name="Body" type="Node2D" parent="." unique_id=1835178666]
+position = Vector2(-73, 1)
+
+[node name="BPoly" type="Polygon2D" parent="Body" unique_id=745239672]
+visible = false
+position = Vector2(-28, -1.1324883e-06)
+scale = Vector2(1, 1.5)
 color = Color(0.51279026, 0.5838927, 0.6798896, 1)
 polygon = PackedVector2Array(70, -9.536743e-07, 36, 15.333332, 0, 8.833333, -8, -0.49999997, 0, -11.833333, 39, -17.333336)
 
-[node name="Tail1" type="Sprite2D" parent="." unique_id=2071193702]
-position = Vector2(-139, -3.9999995)
-scale = Vector2(48, 37.894737)
-
-[node name="Polygon2D" type="Polygon2D" parent="Tail1" unique_id=990024022]
-scale = Vector2(0.020833334, 0.039583333)
-color = Color(0.51279026, 0.5838927, 0.6798896, 1)
-polygon = PackedVector2Array(41, 1.3333335, 40, 9.333334, 6, 6, 7, -4.666667, 39, -7.3333335)
-
-[node name="Tail2" type="Sprite2D" parent="." unique_id=812522182]
-position = Vector2(-168, -3)
-scale = Vector2(48, 37.894737)
-
-[node name="Polygon2D" type="Polygon2D" parent="Tail2" unique_id=282646811]
-scale = Vector2(0.020833334, 0.039583333)
-color = Color(0.51279026, 0.5838927, 0.6798896, 1)
-polygon = PackedVector2Array(41, 1.3333335, 42, 6.666667, 7, 2.6666667, 7, -2, 22.868286, -2.6222878, 41, -3.3333335)
-
-[node name="Tail3" type="Sprite2D" parent="." unique_id=1922683852]
-position = Vector2(-169, -3.0000002)
-scale = Vector2(48, 37.894737)
-
-[node name="Polygon2D" type="Polygon2D" parent="Tail3" unique_id=198267431]
-scale = Vector2(0.020833334, 0.039583333)
-color = Color(0.51279026, 0.5838927, 0.6798896, 1)
-polygon = PackedVector2Array(-15, 0.66666687, -13, 2.3841858e-07, -15, -1.9999998, -3, -0.6666665, 10, -1.9999998, 10, 2.6666665, -3, 2.666667, -16, 3.3333335, -13, 2.0000002)
+[node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=983448059]
+position = Vector2(5, 4.7683716e-07)
+rotation = 0.377049
+scale = Vector2(0.755, 0.595)
+texture = ExtResource("5_ng0mj")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(16, 29, 122, 93)
