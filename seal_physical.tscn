@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://byp6x6n2yy068" path="res://seal-body.png" id="6_ud51w"]
 
 [node name="Seal" type="CharacterBody2D" unique_id=337339226]
+motion_mode = 1
 script = ExtResource("1_8jga5")
 
 [node name="Head" type="CollisionPolygon2D" parent="." unique_id=377058853]

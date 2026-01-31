@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 
-@export var speed = 1000
+@export var speed = 20
+@export var accel = 50
+@export var decel = 5
+
 var motion: Vector2 = Vector2(0,0) # desired direction
-#var velocity: Vector2 = Vector2(0,0)
 var points = []
 var radii = []
 var arm_offsets = []
@@ -16,7 +18,6 @@ var arm_offsets = []
 	$Tail3,
 ]
 
-
 func _ready() -> void:
 	for i in range(segments.size()-1):
 		var seg: Node2D = segments[i]
@@ -24,6 +25,7 @@ func _ready() -> void:
 		points.append(seg.position)
 		var diff = next.position - seg.position
 		radii.append(diff.length())
+		motion = motion.normalized() * speed
 		
 	points.append(segments[segments.size()-1].position)
 	
@@ -49,11 +51,11 @@ func enforce_distance(reverse=0):
 	
 	for i in range(points.size()):
 		segments[i].position = points[i]
-		
+
 func do_rotation(mot: Vector2):
 	for i in range(segments.size()-1, 0, -1):
 		#var foo: Sprite2D = segments[i]
-		#foo.look_at()
+		#foo.look_at()acaccelcel
 		segments[i].look_at(segments[i-1].global_position)
 	if mot.length() > 0.0001:
 		segments[0].look_at(segments[0].global_position + mot)
@@ -69,8 +71,8 @@ func update_arms():
 
 # How do I get this to feel good?
 	# Dashing
-	# Gravity?
-	
+	# Gravity?acaccelcel
+
 func finalize_position():
 	var old_pos = Vector2(self.global_position)
 	var new_pos = Vector2($Head.global_position)
@@ -88,20 +90,26 @@ func finalize_position():
 	#self.position = new_pos
 	#$Head.position = Vector2(0,0)
 	
-func _process(delta: float) -> void:
+func get_directional_input() -> Vector2:
 	var x = (int)(Input.is_key_pressed(KEY_D)) - (int)(Input.is_key_pressed(KEY_A))
 	var y = (int)(Input.is_key_pressed(KEY_S)) - (int)(Input.is_key_pressed(KEY_W))
-	motion = motion.lerp(Vector2(x, y).normalized(), 0.1)
+	return Vector2(x, y).normalized()
+
+func _physics_process(delta: float) -> void:
+	var input = get_directional_input()
 	
-	points[0] += speed * motion * delta
-	
+	if input.length_squared() > 0:
+		motion += (accel * input * delta)
+	else:
+		motion -= (motion.normalized() * decel * delta)
+		
+	if motion.length_squared() >= speed*speed:
+		motion = motion.normalized() * speed
+	points[0] += motion
+
 	enforce_distance()
-	do_rotation(motion)
+	do_rotation(motion * 2)
 	update_arms()
 	
 	finalize_position()
-		
-#func _draw() -> void:
-	#for point in points:
-		#draw_circle(point, 1, Color.BLACK)
-		
+	move_and_slide()
