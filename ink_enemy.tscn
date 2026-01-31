@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dwtgtbvgvh3xi"]
+
+[ext_resource type="Texture2D" uid="uid://l5f241ah0odv" path="res://ink-monster.png" id="1_r0wwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8lida"]
+
+[node name="InkEnemy" type="RigidBody2D" unique_id=169889231]
+gravity_scale = 0.0
+
+[node name="InkMonster" type="Sprite2D" parent="." unique_id=34115135]
+position = Vector2(-1, -1)
+texture = ExtResource("1_r0wwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1409123903]
+position = Vector2(0, -4)
+scale = Vector2(4.6000004, 4.6000004)
+shape = SubResource("CircleShape2D_8lida")

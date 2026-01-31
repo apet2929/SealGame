@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://lnfgwk4pxt1q"]
+
+[ext_resource type="Script" path="res://camera_follow.gd" id="1_d6el8"]
+[ext_resource type="PackedScene" uid="uid://bvtfy8bbynvqq" path="res://seal_physical.tscn" id="2_d6el8"]
+[ext_resource type="PackedScene" uid="uid://dwtgtbvgvh3xi" path="res://ink_enemy.tscn" id="3_4eck2"]
+
+[node name="EnemyLevel" type="Node2D" unique_id=689442668]
+
+[node name="FollowCam" type="Camera2D" parent="." unique_id=210809912 node_paths=PackedStringArray("target")]
+position = Vector2(9, 6)
+position_smoothing_enabled = true
+script = ExtResource("1_d6el8")
+target = NodePath("../PhysicalSeal")
+lerp_speed = 0.2
+
+[node name="Background" type="ColorRect" parent="." unique_id=894213747]
+offset_left = -118278.0
+offset_top = -61446.008
+offset_right = -118238.0
+offset_bottom = -61406.008
+scale = Vector2(494122.44, 171217.77)
+color = Color(0.5858577, 0.69651073, 0.8811255, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1599032264]
+offset_left = 166.0
+offset_top = 137.0
+offset_right = 206.0
+offset_bottom = 177.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=359680142]
+offset_left = 280.0
+offset_top = 54.0
+offset_right = 320.0
+offset_bottom = 94.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=571243956]
+offset_left = 10.0
+offset_top = 287.0
+offset_right = 50.0
+offset_bottom = 327.0
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=80242382]
+offset_left = -268.0
+offset_top = 191.0
+offset_right = -228.0
+offset_bottom = 231.0
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1107270768]
+offset_left = -32.0
+offset_top = 147.0
+offset_right = 8.0
+offset_bottom = 187.0
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=2010627338]
+offset_left = 453.0
+offset_top = 111.0
+offset_right = 493.0
+offset_bottom = 151.0
+
+[node name="ColorRect7" type="ColorRect" parent="." unique_id=1026790173]
+offset_left = 199.0
+offset_top = -91.0
+offset_right = 239.0
+offset_bottom = -51.0
+
+[node name="ColorRect8" type="ColorRect" parent="." unique_id=547628280]
+offset_left = -213.0
+offset_top = -228.0
+offset_right = -173.0
+offset_bottom = -188.0
+
+[node name="ColorRect9" type="ColorRect" parent="." unique_id=717584579]
+offset_left = -312.0
+offset_top = -41.0
+offset_right = -272.0
+offset_bottom = -1.0
+
+[node name="ColorRect10" type="ColorRect" parent="." unique_id=1255913398]
+offset_left = -164.0
+offset_top = 94.0
+offset_right = -124.0
+offset_bottom = 134.0
+
+[node name="PhysicalSeal" parent="." unique_id=2039113663 instance=ExtResource("2_d6el8")]
+position = Vector2(141, 231)
+
+[node name="InkEnemy" parent="." unique_id=169889231 instance=ExtResource("3_4eck2")]
+position = Vector2(453, 278)

@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bvtfy8bbynvqq"]
+
+[ext_resource type="Script" uid="uid://cta2o4h1cm4p1" path="res://seal.gd" id="1_8jga5"]
+[ext_resource type="Texture2D" uid="uid://bqw1bhk4xa38t" path="res://seal-head.png" id="2_kyiue"]
+[ext_resource type="Texture2D" uid="uid://dcspur824qy6s" path="res://seal-flipper-real.png" id="3_7gv82"]
+[ext_resource type="Texture2D" uid="uid://ctok7gbkqosp8" path="res://sea-neckl.png" id="4_um4ui"]
+[ext_resource type="Texture2D" uid="uid://bi1j6lin6jkhj" path="res://seal-flipper.png" id="5_erns5"]
+[ext_resource type="Texture2D" uid="uid://byp6x6n2yy068" path="res://seal-body.png" id="6_ud51w"]
+
+[node name="Seal" type="CharacterBody2D" unique_id=337339226]
+script = ExtResource("1_8jga5")
+
+[node name="Head" type="CollisionPolygon2D" parent="." unique_id=377058853]
+position = Vector2(6, 0)
+scale = Vector2(1, 1.9000002)
+polygon = PackedVector2Array(40, 0.83333325, -1, 12.166666, -20, 0, 0, -10.499999)
+
+[node name="Sprite2D" type="Sprite2D" parent="Head" unique_id=688815131]
+position = Vector2(6, 0.52631575)
+rotation = 1.6327692
+scale = Vector2(0.35707927, 0.7231136)
+skew = -0.04478562
+texture = ExtResource("2_kyiue")
+flip_h = true
+
+[node name="LeftArm" type="CollisionPolygon2D" parent="." unique_id=2102231793]
+position = Vector2(-53, -13.999999)
+rotation = -0.29889113
+scale = Vector2(0.9747823, 1.5587744)
+skew = -0.16023767
+polygon = PackedVector2Array(8, 7.167, 1.2891846, -2.2780857, -2, -4, -7.532013, -5.66757, -27, -6.167, -3, 7.167)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftArm" unique_id=572006610]
+z_index = 1
+position = Vector2(-16.339119, -8.3657875)
+rotation = 2.6051776
+scale = Vector2(0.551876, 0.4577415)
+skew = -0.44375193
+texture = ExtResource("3_7gv82")
+
+[node name="RightArm" type="CollisionPolygon2D" parent="." unique_id=897123452]
+position = Vector2(-51, 1.000001)
+scale = Vector2(1, 1.5000001)
+polygon = PackedVector2Array(8, -7.166665, 1.8210144, 1.5296669, -2, 5.333336, -7.2016296, 5.659012, -27, 6.166668, -3, -7.166665)
+
+[node name="Sprite2D" type="Sprite2D" parent="RightArm" unique_id=211789336]
+z_index = 1
+position = Vector2(-17, 11.333332)
+rotation = 1.0351796
+scale = Vector2(0.4217043, 0.5625748)
+skew = 0.27771878
+texture = ExtResource("3_7gv82")
+flip_h = true
+
+[node name="Neck" type="CollisionPolygon2D" parent="." unique_id=1051686038]
+position = Vector2(-36, 1.7500011)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(29, -1.1666666, 0, 8.833333, -8, -0.49999997, 0, -11.833333)
+
+[node name="Sprite2D" type="Sprite2D" parent="Neck" unique_id=1509331716]
+position = Vector2(17, -1.8333342)
+rotation = 1.5707964
+scale = Vector2(0.42333335, 0.635)
+texture = ExtResource("4_um4ui")
+
+[node name="Tail1" type="CollisionPolygon2D" parent="." unique_id=2069286178]
+position = Vector2(-110, -1.9999999)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(41, 1.3333335, 40, 9.333334, 6, 6, 7, -4.666667, 39, -7.3333335)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail1" unique_id=307816219]
+position = Vector2(-1, -1.1920929e-07)
+scale = Vector2(1, 0.21569356)
+texture = ExtResource("6_ud51w")
+region_enabled = true
+region_rect = Rect2(103, 45, 39, 77)
+
+[node name="Tail2" type="CollisionPolygon2D" parent="." unique_id=129868666]
+position = Vector2(-142, -2)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(41, 1.3333335, 42, 6.666667, 7, 2.6666667, 7, -2, 22.868286, -2.6222878, 41, -3.3333335)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail2" unique_id=2087069449]
+position = Vector2(3, -0.6666666)
+scale = Vector2(0.8138632, 0.5138562)
+texture = ExtResource("5_erns5")
+region_enabled = true
+region_rect = Rect2(54.904613, 0, 47.284855, 34)
+
+[node name="Tail3" type="CollisionPolygon2D" parent="." unique_id=788875299]
+position = Vector2(-169, -3.0000002)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(-15, 0.66666687, -13, 2.3841858e-07, -15, -1.9999998, -3, -0.6666665, 10, -1.9999998, 10, 2.6666665, -3, 2.666667, -16, 3.3333335, -13, 2.0000002)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tail3" unique_id=1790378086]
+scale = Vector2(0.60277814, 0.49262512)
+texture = ExtResource("5_erns5")
+region_enabled = true
+region_rect = Rect2(0, 0, 54.56123, 34)
+
+[node name="Body" type="CollisionPolygon2D" parent="." unique_id=1953994590]
+position = Vector2(-101, 0.99999887)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(70, -9.536743e-07, 36, 15.333332, 0, 8.833333, -8, -0.49999997, 0, -11.833333, 39, -17.333336)
+
+[node name="Sprite2D" type="Sprite2D" parent="Body" unique_id=983448059]
+position = Vector2(33, 1.0728836e-06)
+rotation = 0.258108
+scale = Vector2(0.7260147, 0.42895868)
+skew = 0.27788246
+texture = ExtResource("6_ud51w")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(16, 29, 122, 93)
