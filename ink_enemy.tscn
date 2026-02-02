@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://l5f241ah0odv" path="res://ink-monster.png" id="1_r0wwl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lida"]
+radius = 59.5668
 
 [node name="InkEnemy" type="RigidBody2D" unique_id=169889231]
 gravity_scale = 0.0
 
 [node name="InkMonster" type="Sprite2D" parent="." unique_id=34115135]
 position = Vector2(-1, -1)
+scale = Vector2(5.673448, 5.673448)
 texture = ExtResource("1_r0wwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1409123903]

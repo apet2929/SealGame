@@ -4,23 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://bvtfy8bbynvqq" path="res://seal_physical.tscn" id="2_d6el8"]
 [ext_resource type="PackedScene" uid="uid://dwtgtbvgvh3xi" path="res://ink_enemy.tscn" id="3_4eck2"]
 [ext_resource type="Script" uid="uid://dqye2po3ank30" path="res://seal_physical.gd" id="3_ioh4v"]
+[ext_resource type="Script" uid="uid://bk4pdmkmoyyoj" path="res://ink_enemy.gd" id="5_mw8qo"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ioh4v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioh4v"]
+size = Vector2(20, 15.937027)
 
 [node name="EnemyLevel" type="Node2D" unique_id=689442668]
 
 [node name="FollowCam" type="Camera2D" parent="." unique_id=210809912 node_paths=PackedStringArray("target")]
 scale = Vector2(2, 2)
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 script = ExtResource("1_d6el8")
 target = NodePath("../PhysicalSeal")
 lerp_speed = 0.2
 
 [node name="Background" type="ColorRect" parent="." unique_id=894213747]
-offset_left = -118278.0
-offset_top = -61446.008
-offset_right = -118238.0
-offset_bottom = -61406.008
+offset_left = -117555.0
+offset_top = -62084.996
+offset_right = -117515.0
+offset_bottom = -62044.996
 scale = Vector2(494122.44, 171217.77)
 color = Color(0.5858577, 0.69651073, 0.8811255, 1)
 
@@ -91,19 +94,24 @@ speed = 20
 accel = 50
 decel = 5
 
-[node name="InkEnemy" parent="." unique_id=169889231 instance=ExtResource("3_4eck2")]
-position = Vector2(453, 278)
+[node name="InkEnemy" parent="." unique_id=169889231 node_paths=PackedStringArray("target") instance=ExtResource("3_4eck2")]
+position = Vector2(687, 225)
+mass = 100.0
+script = ExtResource("5_mw8qo")
+target = NodePath("../PhysicalSeal")
+
+[node name="ColorRect11" type="ColorRect" parent="." unique_id=1970655210]
+offset_left = 1152.0
+offset_top = -96.0
+offset_right = 1192.0
+offset_bottom = -56.0
+scale = Vector2(0.85743624, 22.117239)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1328426072]
 position = Vector2(1152, 216)
 rotation = -1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1721295631]
-shape = SubResource("WorldBoundaryShape2D_ioh4v")
-
-[node name="ColorRect11" type="ColorRect" parent="." unique_id=1970655210]
-offset_left = 1152.0
-offset_top = -95.99999
-offset_right = 1192.0
-offset_bottom = -55.999992
-scale = Vector2(0.85743624, 22.117239)
+position = Vector2(0, 6)
+scale = Vector2(43.282936, -2.6353714)
+shape = SubResource("RectangleShape2D_ioh4v")

@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-
 @export var speed = 20
 @export var accel = 50
 @export var decel = 5
 
-var motion: Vector2 = Vector2(0,0) # desired direction
+#var motion: Vector2 = Vector2(0,0) # desired direction
 var points = []
 var radii = []
 var arm_offsets = []
@@ -25,7 +24,7 @@ func _ready() -> void:
 		points.append(seg.position)
 		var diff = next.position - seg.position
 		radii.append(diff.length())
-		motion = motion.normalized() * speed
+		#motion = motion.normalized() * speed
 		
 	points.append(segments[segments.size()-1].position)
 	
@@ -99,16 +98,16 @@ func _physics_process(delta: float) -> void:
 	var input = get_directional_input()
 	
 	if input.length_squared() > 0:
-		motion += (accel * input * delta)
+		velocity += (accel * input * delta)
 	else:
-		motion -= (motion.normalized() * decel * delta)
+		velocity -= (velocity.normalized() * decel * delta)
 		
-	if motion.length_squared() >= speed*speed:
-		motion = motion.normalized() * speed
-	points[0] += motion
+	if velocity.length_squared() >= speed*speed:
+		velocity = velocity.normalized() * speed
+	points[0] += velocity
 
 	enforce_distance()
-	do_rotation(motion * 2)
+	do_rotation(velocity)
 	update_arms()
 	
 	finalize_position()
